@@ -1,0 +1,28 @@
+# Proyecto integrador backend Numen - Jorge Niglia
+
+## inicio
+
+1 - Se inicia desde una plantilla de `express-generator`
+2 - Se agregan las carpetas controllers, db, middlewares y models
+3 - Se instalan las librerias bcryptjs, doenv, express-session, express-validator jsonwebtoken mongoose cors
+4 - Se agregan los archivos .gitignore, .env y este README.md
+5 - Se importa y ejecuta `cors` en `app.js`
+
+## Contar con una base de datos propia y cuenta en mongocompas
+
+1 - Se crea proyecto: Project 0 en MongoDB (https://www.mongodb.com/products/compass)
+2 - Se acrea archivo `db/db.js` para conexión a la base de datos
+3 - Se importa en `app.js`
+4 - Se agrega la variable de entorno `MONGO_CONNECT` en `.env`
+
+## Servidor en node que utiliza rutas con sus repectivos métodos http para la comunicación con la base de datos
+
+## Poseer un esquema propio y original
+
+## Poseer aunque sea 4 rutas para conformar un CRUD
+
+## Validar las rutas que sean necesarias con el uso de express validator
+
+## Desarrollar un middleware propio
+
+## Tener una ruta que se comunica a una api externa
