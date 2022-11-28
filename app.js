@@ -8,6 +8,8 @@ require("dotenv").config();
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
+const { DBConnection } = require("./db/db");
+
 const app = express();
 
 app.use(logger("dev"));
@@ -18,5 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+
+DBConnection();
 
 module.exports = app;

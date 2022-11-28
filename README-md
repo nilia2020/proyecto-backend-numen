@@ -12,8 +12,8 @@
 
 1 - Se crea proyecto: Project 0 en MongoDB (https://www.mongodb.com/products/compass)
 2 - Se acrea archivo `db/db.js` para conexión a la base de datos
-3 - Se importa en `app.js`
-4 - Se agrega la variable de entorno `MONGO_CONNECT` en `.env`
+3 - Se importa en `app.js` y se ejecuta como una función `DBConnection()`
+4 - Se agrega la variable de entorno `MONGO_CONNECTION` y `PORT` en `.env`
 
 ## Servidor en node que utiliza rutas con sus repectivos métodos http para la comunicación con la base de datos
 
