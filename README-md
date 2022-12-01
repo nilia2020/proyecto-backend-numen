@@ -19,6 +19,8 @@
 
 ## Poseer un esquema propio y original
 
+1 - archivo `models/formulaone.js`
+
 ## Poseer aunque sea 4 rutas para conformar un CRUD
 
 ## Validar las rutas que sean necesarias con el uso de express validator
