@@ -1,15 +1,23 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 const controller = require("../controllers/userController");
 const authSession = require("../middlewares/authSession");
 const authJWT = require("../middlewares/authJWT");
 const { check } = require("express-validator");
-const { validateId } = require("../middlewares/validateId");
+const { validateId } = require("../middlewares/validations");
 
+//REGISTRARSE
 router.post(
-  "/newUser",
+  "/signin",
   [
-    check("name").not().isEmpty().withMessage("Debes ingresar tu nombre"),
+    check("username.firstname")
+      .not()
+      .isEmpty()
+      .withMessage("Debes ingresar tu nombre"),
+    check("username.lastname")
+      .not()
+      .isEmpty()
+      .withMessage("Debes ingresar tu apellido"),
     check("email")
       .not()
       .isEmpty()
@@ -20,8 +28,8 @@ router.post(
       .not()
       .isEmpty()
       .withMessage("Debes ingresar una contraseña")
-      .isLength({ min: 8, max: 15 })
-      .withMessage("La contraseña debe contener entre 8 a 15 caracteres."),
+      .isLength({ min: 8, max: 12 })
+      .withMessage("La contraseña debe contener entre 8 a 12 caracteres."),
   ],
   controller.newUser
 );
@@ -43,13 +51,13 @@ router.put(
       .not()
       .isEmpty()
       .withMessage("El campo esta vacio")
-      .isLength({ min: 8, max: 15 })
-      .withMessage("La contraseña debe contener entre 8 a 15 letras."),
+      .isLength({ min: 8, max: 12 })
+      .withMessage("La contraseña debe contener entre 8 y 12 caracteres."),
   ],
   controller.editPassword
 );
 
-/* BORRAR */
+/* BORRAR USUARIO*/
 router.delete(
   "/deleteUser/:id",
   authSession,

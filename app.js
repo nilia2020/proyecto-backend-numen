@@ -7,6 +7,8 @@ require("dotenv").config();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const formulaoneRouter = require("./routes/formulaone");
+const apiRouter = require("./routes/externalApi");
 
 const { DBConnection } = require("./db/db");
 
@@ -27,6 +29,8 @@ app.use(
 );
 app.use("/", indexRouter);
 app.use("/api", usersRouter);
+app.use("/api/f1", formulaoneRouter);
+app.use("/api/external/f1", apiRouter);
 
 DBConnection();
 
