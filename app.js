@@ -29,7 +29,7 @@ app.use(
   })
 );
 app.use("/", indexRouter);
-app.use("/api", usersRouter);
+app.use("/api/user", usersRouter);
 app.use("/api/f1", formulaoneRouter);
 app.use("/api/external/f1", apiRouter);
 

@@ -6,9 +6,13 @@ const { validateId, validateSeason } = require("../middlewares/validations");
 
 router.get("/seeall", f1controllers.seeAll);
 
-router.get("/see/:id", validateId, f1controllers.seeDriverById);
+router.get("/drivers/:id", validateId, f1controllers.seeDriverById);
 
-router.get("/season/:season", validateSeason, f1controllers.seeDriversBySeason);
+router.get(
+  "/drivers/:season",
+  validateSeason,
+  f1controllers.seeDriversBySeason
+);
 
 router.post(
   "/newdriverbyseason",
@@ -81,7 +85,7 @@ router.post(
 );
 
 router.put(
-  "/edit/:id",
+  "/editdriver/:id",
   [
     check("driver.firstname")
       .not()
@@ -151,6 +155,6 @@ router.put(
   f1controllers.editDriverById
 );
 
-router.delete("/delete/:id", validateId, f1controllers.deleteDriverById);
+router.delete("/deletedriver/:id", validateId, f1controllers.deleteDriverById);
 
 module.exports = router;

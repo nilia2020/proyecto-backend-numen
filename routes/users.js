@@ -35,14 +35,20 @@ router.post(
 );
 
 /* VER TODOS */
-router.get("/users", authSession, authJWT, controller.allUsers);
+router.get("/seeusers", authSession, authJWT, controller.allUsers);
 
 /* VER UNO */
-router.get("/users/:id", authSession, authJWT, validateId, controller.userById);
+router.get(
+  "/seeuser/:id",
+  authSession,
+  authJWT,
+  validateId,
+  controller.userById
+);
 
 /* EDITAR */
 router.put(
-  "/editPassword/:id",
+  "/editpassword/:id",
   authSession,
   authJWT,
   validateId,
@@ -59,7 +65,7 @@ router.put(
 
 /* BORRAR USUARIO*/
 router.delete(
-  "/deleteUser/:id",
+  "/deleteuser/:id",
   authSession,
   authJWT,
   validateId,
@@ -88,9 +94,9 @@ router.post(
 router.get("/logout", authSession, authJWT, controller.logout);
 
 /* LOGS */
-router.get("/logs", authSession, authJWT, controller.allLogs);
+router.get("/seelogs", authSession, authJWT, controller.allLogs);
 
 /* LOGS */
-router.get("/logs/:id", authSession, authJWT, controller.userLogs);
+router.get("/seelogs/:id", authSession, authJWT, controller.userLogs);
 
 module.exports = router;
