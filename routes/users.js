@@ -8,7 +8,7 @@ const { validateId } = require("../middlewares/validations");
 
 //REGISTRARSE
 router.post(
-  "/signin",
+  "/signup",
   [
     check("username.firstname")
       .not()
@@ -31,14 +31,14 @@ router.post(
       .isLength({ min: 8, max: 12 })
       .withMessage("La contraseña debe contener entre 8 a 12 caracteres."),
   ],
-  controller.newUser
+  controller.signup
 );
 
 /* VER TODOS */
 router.get("/users", authSession, authJWT, controller.allUsers);
 
 /* VER UNO */
-router.get("/users/:id", authSession, authJWT, validateId, controller.user);
+router.get("/users/:id", authSession, authJWT, validateId, controller.userById);
 
 /* EDITAR */
 router.put(

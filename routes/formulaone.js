@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { check } = require("express-validator");
 const f1controllers = require("../controllers/f1Controller");
 const { validateId, validateSeason } = require("../middlewares/validations");
 
@@ -36,8 +37,8 @@ router.post(
       .withMessage("Debe ser un número")
       .isLength({ min: 4, max: 4 })
       .withMessage("Debe tener 4 dígitos el año")
-      .isNumeric({ min: 1950 }),
-    withMessage("Debe ser mayor a 1949"),
+      .isNumeric({ min: 1950 })
+      .withMessage("Debe ser mayor a 1949"),
   ],
   [
     check("team")
@@ -106,8 +107,8 @@ router.put(
       .withMessage("Debe ser un número")
       .isLength({ min: 4, max: 4 })
       .withMessage("Debe tener 4 dígitos el año")
-      .isNumeric({ min: 1950 }),
-    withMessage("Debe ser mayor a 1949"),
+      .isNumeric({ min: 1950 })
+      .withMessage("Debe ser mayor a 1949"),
   ],
   [
     check("team")

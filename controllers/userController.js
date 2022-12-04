@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const generateJWT = require("../helpers/generateJWT");
 
 const userControllers = {
-  signin: async (req, res) => {
+  signup: async (req, res) => {
     try {
       const error = validationResult(req);
       if (error.isEmpty()) {
