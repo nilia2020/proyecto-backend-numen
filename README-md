@@ -17,7 +17,7 @@
 
 ## Servidor en node que utiliza rutas con sus repectivos métodos http para la comunicación con la base de datos
 
-1 - Ver CRUD.
+1 - Ver CRUD. Se adjunta json de POSTMAN con las rutas
 
 ## Poseer un esquema propio y original
 
@@ -26,7 +26,8 @@
 
 ## Poseer aunque sea 4 rutas para conformar un CRUD
 
-Rutas:
+### Rutas:
+
 Create (POST)
 
 - `/api/user/signup` Crear un usuario nuevo

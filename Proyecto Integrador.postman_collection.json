@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "6ddd0114-7dde-42c4-8b79-f54845b54213",
+		"name": "Proyecto Integrador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13972520"
+	},
+	"item": [
+		{
+			"name": "ver todos los usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/seeusers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"seeusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver usuario por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/seeuser/638ce3b248a78d07d0a5c4c5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"seeuser",
+						"638ce3b248a78d07d0a5c4c5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/seelogs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"seelogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver logs por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/seelogs/638cdf7c48a78d07d0a5c4bd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"seelogs",
+						"638cdf7c48a78d07d0a5c4bd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver todos los registros F1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"driver\": {\r\n            \"firstname\": \"Nuno\",\r\n            \"lastname\": \"Nuno\"\r\n        },\r\n        \"season\": 2021,\r\n        \"team\": \"Ferrari\",\r\n        \"wins\": 0,\r\n        \"points\": 395.5,\r\n        \"champion\": false\r\n\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/f1/seeall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"f1",
+						"seeall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver pilotos por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/f1/get/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"f1",
+						"get",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ver pilotos por temporada desde API externa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/f1/drivers/2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"f1",
+						"drivers",
+						"2021"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear piloto en una temporada",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"driver\": {\r\n        \"firstname\": \"Ayrton\",\r\n        \"lastname\": \"Senna\"\r\n    },\r\n    \"season\": 2020,\r\n    \"team\": \"Red Bull Racing Honda\",\r\n    \"wins\": true,\r\n    \"points\": 125,\r\n    \"champion\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/f1/newdriverbyseason",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"f1",
+						"newdriverbyseason"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nuevo usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": {\r\n        \"firstname\": \"Carlo\",\r\n        \"lastname\": \"chulo\"\r\n    },\r\n    \"email\": \"carlo@gmail.com\",\r\n    \"password\": \"numenabc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jorge.niglia@gmail.com\",\r\n    \"password\": \"numen123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar contraseña",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"numen789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/editpassword/638cdf7c48a78d07d0a5c4bd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"editpassword",
+						"638cdf7c48a78d07d0a5c4bd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar piloto por id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"numen789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/f1/editdriver/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"f1",
+						"editdriver",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"temporada\": 2022,\r\n    \"piloto\": {\r\n        \"nombre\": \"Charles\",\r\n        \"apellido\": \"Leclerc\"\r\n    },\r\n    \"constructor\": \"Ferrari\",\r\n    \"circuito\": \"Barhein\",\r\n    \"sprint\": \"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/deleteuser/638cf45bda2b468e3f6bccf2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"deleteuser",
+						"638cf45bda2b468e3f6bccf2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete piloto by ID Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"temporada\": 2022,\r\n    \"piloto\": {\r\n        \"nombre\": \"Charles\",\r\n        \"apellido\": \"Leclerc\"\r\n    },\r\n    \"constructor\": \"Ferrari\",\r\n    \"circuito\": \"Barhein\",\r\n    \"sprint\": \"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/f1/deletedriver/638ceaba8e29816fc6fb7131",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"f1",
+						"deletedriver",
+						"638ceaba8e29816fc6fb7131"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
