@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
 const f1controllers = require("../controllers/f1Controller");
-const { validateId, validateSeason } = require("../middlewares/validations");
+const { validateIdf1, validateSeason } = require("../middlewares/validations");
 
 router.get("/seeall", f1controllers.seeAll);
 
-router.get("/drivers/:id", validateId, f1controllers.seeDriverById);
+router.get("/driver/:id", validateIdf1, f1controllers.seeDriverById);
 
 router.get(
   "/drivers/:season",
@@ -151,10 +151,14 @@ router.put(
       .isBoolean()
       .withMessage("Debes completar con true o false"),
   ],
-  validateId,
+  validateIdf1,
   f1controllers.editDriverById
 );
 
-router.delete("/deletedriver/:id", validateId, f1controllers.deleteDriverById);
+router.delete(
+  "/deletedriver/:id",
+  validateIdf1,
+  f1controllers.deleteDriverById
+);
 
 module.exports = router;

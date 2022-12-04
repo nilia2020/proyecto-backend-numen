@@ -55,12 +55,12 @@ const controllers = {
   },
   deleteDriverById: async (req, res) => {
     try {
-      const item = await FormulaOne.findByIdAndDelete(req.params.id);
+      const driver = await FormulaOne.findByIdAndDelete(req.params.id);
       res
-        .status(200)
-        .json({ msg: "el siguiente item fue eliminado", item: item });
+        .status(202)
+        .json({ msg: "el siguiente piloto fue eliminado", driver });
     } catch (error) {
-      res.status(501).json({ msg: error });
+      res.status(400).json({ msg: error });
     }
   },
 };

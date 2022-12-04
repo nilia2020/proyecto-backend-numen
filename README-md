@@ -21,7 +21,8 @@
 
 ## Poseer un esquema propio y original
 
-1 - archivo `models/formulaone.js`
+1 - archivo `models/formulaone.js` propio y original
+2 - archivos `models/users` y `models/logs` tomados de las clases y modificados para este proyecto
 
 ## Poseer aunque sea 4 rutas para conformar un CRUD
 
@@ -41,15 +42,14 @@ Read (GET)
 - `/api/user/seelogs` ver todos los registros de sesion
 - `/api/user/seelogs/:id` ver todos los registros de sesión de un usuario por ID
 - `/api/f1/seeall` ver todos los registros
-- `/api/f1/drivers/:id` ver pilotos por id
+- `/api/f1/driver/:id` ver pilotos por id
 - `/api/f1/drivers/:season` ver pilotos por temporada
 - `/api/external/f1/drivers/:season` Ver datos de pilotos por temporada desde una api externa
 
 Update (PUT)
 
 - `/api/user/editpassword/:id` editar contraseña
-- `/api/edit/:id` editar usuario
-- `/api/f1/editdriver` editar piloto por id
+- `/api/f1/editdriver/:id` editar piloto por id
 
 Delete (DELETE)
 
@@ -62,7 +62,7 @@ Delete (DELETE)
 
 ## Desarrollar un middleware propio
 
-1 - ValideId
+1 - ValideIdf1
 2 - ValidateSeason
 
 ## Tener una ruta que se comunica a una api externa

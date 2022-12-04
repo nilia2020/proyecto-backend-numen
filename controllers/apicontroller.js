@@ -8,7 +8,7 @@ const seeDriversBySeason = async (req, res) => {
     const url = URL + `/${req.params.season}/drivers.json`;
     console.log(url);
     const response = await axios.get(url);
-    console.log(response.data.MRData.DriverTable.Drivers.map());
+    console.log(response.data.MRData.DriverTable.Drivers);
     res.json({
       status: response.status,
       data: response.data.MRData.DriverTable.Drivers.map(

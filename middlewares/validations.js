@@ -19,9 +19,27 @@ const validateId = async (req, res, next) => {
   }
 };
 
+const validateIdf1 = async (req, res, next) => {
+  try {
+    const user = await FormulaOne.findById(req.params.id);
+    if (user !== null) {
+      next();
+    } else {
+      res
+        .status(404)
+        .json({ msg: "El id ingresado no se encuentra en la base de datos." });
+    }
+  } catch (error) {
+    res.status(400).json({
+      msg: "El formato de id ingresado es inválido, revíselo y vuelva a intentarlo",
+      error,
+    });
+  }
+};
+
 const validateSeason = async (req, res, next) => {
   try {
-    const user = await FormulaOne.find(req.params.season);
+    const user = await FormulaOne.find({ season: Number(req.params.season) });
     if (user !== null) {
       next();
     } else {
@@ -37,4 +55,4 @@ const validateSeason = async (req, res, next) => {
   }
 };
 
-module.exports = { validateId, validateSeason };
+module.exports = { validateId, validateSeason, validateIdf1 };
